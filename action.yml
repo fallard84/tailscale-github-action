@@ -47,6 +47,11 @@ inputs:
 runs:
     using: 'composite'
     steps:
+      # dummy nested action
+      - name: Black
+        uses: microsoft/action-python@0.7.0
+        with:
+          black: true
       - name: Check Runner OS
         if: ${{ runner.os != 'Linux' }}
         shell: bash
